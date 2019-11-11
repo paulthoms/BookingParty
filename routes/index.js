@@ -28,8 +28,8 @@ var BookingHandler = require('./booking');
 
 var User = new UserHandler(MysqlDB, jwt, CryptoJS);
 var Login = new LoginHandler(MysqlDB, jwt, CryptoJS);
-var Restaurant = new RestaurantHandler(MysqlDB,jwt,CryptoJS);
-var Booking = new BookingHandler(MysqlDB,jwt,CryptoJS);
+var Restaurant = new RestaurantHandler(MysqlDB, jwt, CryptoJS);
+var Booking = new BookingHandler(MysqlDB, jwt, CryptoJS);
 
 //end create object controller
 
@@ -120,24 +120,48 @@ router.post('/login', Login.postLogin);
 //API for restaurant table
 var MiddlewareAdmin = require('../middleware/middlewareAdmin');
 var checkAdmin = new MiddlewareAdmin(jwt);
-router.get('/pub/restaurant',Restaurant.getRestaurant);
-router.get('/pub/restaurant/:id',Restaurant.getRestaurantID);
-router.post('/restaurant/new',checkAdmin.checkTokenAdmin,Restaurant.postRestaurant);
-router.put('/restaurant/:id',checkAdmin.checkTokenAdmin,Restaurant.updateRestaurant);
-router.delete('/restaurant/:id',checkAdmin.checkTokenAdmin,Restaurant.updateRestaurant);
+router.get('/pub/restaurant', Restaurant.getRestaurant);
+router.get('/pub/restaurant/:id', Restaurant.getRestaurantID);
+router.post('/restaurant/new', checkAdmin.checkTokenAdmin, Restaurant.postRestaurant);
+router.put('/restaurant/:id', checkAdmin.checkTokenAdmin, Restaurant.updateRestaurant);
+router.delete('/restaurant/:id', checkAdmin.checkTokenAdmin, Restaurant.updateRestaurant);
 //end API for restaurant table
 
 
 //API for Booking table
 
-router.get('/booking',checkAdmin.checkTokenAdmin,Booking.getBooking);
-router.get('/booking/user',Booking.getBookingUser);
-router.post('/booking/new',Booking.postBooking);
-router.put('/booking/update',Booking.updateBooking);
-router.delete('/booking/delete',Booking.deleteBooking);
+router.get('/booking', checkAdmin.checkTokenAdmin, Booking.getBooking);
+router.get('/booking/user', Booking.getBookingUser);
+router.post('/booking/new', Booking.postBooking);
+router.put('/booking/update', Booking.updateBooking);
+router.delete('/booking/delete', Booking.deleteBooking);
 
 
 //end API for Booking table
 
+router.post('/testUpload', function (req, res, next) {
+  console.log(req.files)
+  if (req.files === null) {
+    return res.status(400).json({
+      msg: "No file upload"
+    });
+  }
 
+  const file = req.files.file;
+  const tmpdir = __dirname.substring(0,__dirname.length-7);
+  file.mv(`${tmpdir}/frontend/public/uploads/${file.name}`, (err) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).send(err);
+    }
+
+    res.json({
+      fileName: file.name,
+      filePath: `/uploads/${file.name}`
+    });
+
+  })
+
+
+});
 module.exports = router;

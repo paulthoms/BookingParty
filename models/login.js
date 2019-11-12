@@ -17,7 +17,7 @@ function LoginDAO(MysqlDB, jwt, CryptoJS) {
                 if (result.length === 0) {
                     callback({
                         "status": "error",
-                        "code": "401"
+                        "code": "401-s1"
                     });
                 }
                 else {
@@ -34,7 +34,7 @@ function LoginDAO(MysqlDB, jwt, CryptoJS) {
                                 if (error) {
                                     callback({
                                         "status": "error",
-                                        "code": "401"
+                                        "code": "401-s2"
                                     });
                                 }
                                 else {
@@ -45,7 +45,7 @@ function LoginDAO(MysqlDB, jwt, CryptoJS) {
                         else {
                             callback({
                                 "status": "error",
-                                "code": "401"
+                                "code": "401-s3"
                             });
                         }
                     }

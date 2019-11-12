@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Slide from './Slide';
+import BestRestaurant from './BestRestaurant';
+import DiscoveryRestaurant from './DiscoveryRestaurant';
 
 export default function HomePage() {
     return (
-        <div>
-            This home page
+        <div className="home__main">
+            <Slide />
+            <BestRestaurant />
+            <DiscoveryRestaurant />
         </div>
     )
 }

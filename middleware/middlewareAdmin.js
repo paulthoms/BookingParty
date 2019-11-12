@@ -7,7 +7,7 @@ function MiddlewareAdmin(jwt) {
             }
             else {
                 console.log(authData);
-                if (authData.user.Name === "admin") {
+                if (authData.user.role === 0) {
                     next();
                 }
                 else {

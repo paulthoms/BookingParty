@@ -52,4 +52,84 @@ html,body{
     justify-content: space-between;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* end navbar */
+
+
+/* home page */
+
+.home__best-restaurant__group {
+    padding: 2rem;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    background: #f5efe4;
+}
+
+@media screen and (min-width: 700px){
+    .home__best-restaurant__group {
+        margin: 2rem 5rem 3rem 5rem;
+        padding: 2rem;
+        border: 1px solid #9e9e9e;
+        border-radius: 5px;
+        background: #f5efe4;
+    }    
+}
+
+.home__best-restaurant {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__best-restaurant__title {
+    display: flex;
+    align-items: center;
+}
+
+.home__best-restaurant__header {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.home__discovery-filter__result {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home__discovery-filter {
+    width: 30%;
+}
+
+.home__discovery-restaurant {
+    display: flex;
+}
+
+.home__discovery-restaurant__header {
+    display: flex;
+}
+
+.home__discovery-restaurant__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__discovery-restaurant__header {
+    display: flex;
+    font-size: 1.5rem;
+    margin-left: 3rem;
+    margin-top: 2rem ;
+}
+
+.home__discovery-select-filter{
+    display: flex;
+    justify-content: center;
+}
+
+/* end home page */

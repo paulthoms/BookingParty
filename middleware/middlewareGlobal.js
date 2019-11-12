@@ -6,6 +6,7 @@ var pathURL = [
     "register",
     "checkmail",
     "pub/restaurant",
+    "pub/dish/",
     "testUpload"
 ];
 

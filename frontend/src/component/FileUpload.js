@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 
+import {getAPI} from '../shared/APICaller';
+
 export default function FileUpload() {
 
     const [file, setFile] = useState('');
@@ -45,18 +47,28 @@ export default function FileUpload() {
 
     }
 
+    function handlerGetAPI(){
+        getAPI("restaurant-owners",function(res){
+            console.log(res)
+        });
+    }
+
 
     return (
         <div>
             <form onSubmit={handleOnSubmit} >
+
                 <input id="customFile" type="file" className="custom-file-input" onChange={handleOnChange} />
-                <label className="custom-filelabel" for="customFile">
+                <label className="custom-filelabel" htmlFor="customFile">
                     {filename}
                 </label>
 
                 <input type="submit" value="Upload" className="btn btn-primary btn-block mt-4" />
 
             </form>
+
+            <button onClick = {handlerGetAPI} > getAPI </button>
+
         </div>
     )
 }

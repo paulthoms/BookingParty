@@ -7,7 +7,7 @@ export default function AboutRestaurant(props) {
     return (
         <div className="about-restaurant" >
             <div className="about-restaurant__banner" >
-
+                
             </div>
             <div className="about-restaurant__group" >
                 <div className="about-restaurant__left" >

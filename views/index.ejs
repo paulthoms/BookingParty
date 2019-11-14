@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +8,22 @@
     <title>Chat App</title>
     <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
+
 <body>
-    
 
-    <div class="chat">
+    <%= result %>
 
+    <form method="POST" action="/ptt2">
+        <label for="a">nhap a:</label>
+        <input name="a" id="a" />
+        <label for="b">nhap b:</label>
+        <input name="b" id="b" />
+        <label for="c">nhap c:</label>
+        <input name="c" id="c" />
 
-        <input type="text" class = "chat__name" placeholder="Enter your name">
-        <div class="chat__messages" >
-            <div class="chat__message" >
-                Alex: Hello there
-            </div>
-            <div class="chat__message" >
-                Asley: Hello there
-            </div>
-        </div>
-        <textarea class="chat__main" name="text" id="" cols="30" rows="10" placeholder="type your message" >
-        </textarea>
+        <button type="submit">get result</button>
+    </form>
 
-        <div class="chat__status">
-            Status: <span>Idle</span>
-        </div>
-
-    </div>
 </body>
+
 </html>

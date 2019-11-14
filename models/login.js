@@ -10,7 +10,7 @@ function LoginDAO(MysqlDB, jwt, CryptoJS) {
                 callback({
                     "status": "error",
                     "code": "400",
-                    "error":error
+                    "error": error
                 });
             }
             else {
@@ -27,7 +27,7 @@ function LoginDAO(MysqlDB, jwt, CryptoJS) {
                         var bytes = CryptoJS.AES.decrypt(result[0].Password.toString(), 'secretKey');
                         var password = bytes.toString(CryptoJS.enc.Utf8);
 
-                        console.log('this is password', password);
+                        // console.log('this is password', result[0]);
 
                         if (user.Password === password) {
                             jwt.sign({ user: result[0] }, 'secretKey', { expiresIn: '1h' }, function (error, token) {
@@ -38,7 +38,7 @@ function LoginDAO(MysqlDB, jwt, CryptoJS) {
                                     });
                                 }
                                 else {
-                                    callback(token);
+                                    callback({ token: token, role: result[0].role });
                                 }
                             });
                         }

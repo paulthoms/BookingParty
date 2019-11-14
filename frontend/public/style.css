@@ -19,16 +19,21 @@ html,body{
 }
 
 .navbar__navigation-link {
-    margin-right: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
 }
 
 .navbar__navigation-link:hover {
- text-decoration: underline;
+    color: yellow;
 }
 
 .narbar__navigation-group {
     display: flex;
-    width: 40%;
+    width: 100%;
 }
 
 .filter__icon{

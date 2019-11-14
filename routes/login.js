@@ -8,6 +8,7 @@ function Login(MysqlDB, jwt, CryptoJS) {
     this.postLogin = function (req, res, next) {
 
         var user = req.body;
+        console.log(req.body);
         LoginModel.postLogin(user, function (result) {
             res.json({
                 "status":"ok",

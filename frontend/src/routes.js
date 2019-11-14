@@ -1,6 +1,7 @@
 import HomePage from './home/HomePage';
 import BookingPage from './booking/BookingPage';
 import AboutRestaurant from './about-restaurant/AboutRestaurant';
+import AdminLogin from './component/Login/Login'
 
 
 const NavigationConfig = [
@@ -21,6 +22,11 @@ const NavigationConfig = [
         id: "detail_restaurant",
         url: "/about/restaurant/:slug",
         component: AboutRestaurant
+    },
+    {
+        id: "adminLogin",
+        url: "/admin-login",
+        component: AdminLogin
     }
 
 ]

@@ -91,9 +91,9 @@ export default function Search() {
                     />
                 </div>
             </div>
-            <Button>
-                <Icon>person</Icon>
-            </Button>
+            {/* <Button>
+                <Login />
+            </Button> */}
         </div>
     )
 }

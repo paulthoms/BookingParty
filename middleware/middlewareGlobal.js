@@ -7,7 +7,7 @@ var pathURL = [
     "checkmail",
     "pub/restaurant",
     "pub/dish/",
-    "testUpload"
+    "testUpload",
 ];
 
 function AllowPath(path) {

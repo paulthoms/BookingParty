@@ -6,7 +6,17 @@ import { Route, Switch } from 'react-router-dom';
 import Navigation from './routes';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+
+import { useAppContext } from "./contextApp/useContextApp";
+
 function App() {
+
+  const {
+    NavigationConfig
+  } = useAppContext();
+
+  console.log(NavigationConfig);
+
   return (
     <div>
       <Router>
@@ -15,11 +25,13 @@ function App() {
         <NarBar />
         <Switch>
           {
-            Navigation.map((item, index) => {
+            NavigationConfig.map((item, index) => {
               return <Route exact path={item.url} component={item.component} />
             })
           }
         </Switch>
+
+        {/* <FileUpload /> */}
 
       </Router>
 

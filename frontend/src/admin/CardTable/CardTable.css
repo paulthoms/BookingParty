@@ -1,0 +1,173 @@
+.makeStyles-grid-361 {
+    padding: 0 15px !important;
+}
+
+.MuiGrid-grid-md-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+}
+
+.MuiGrid-item {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.makeStyles-card-362 {
+    color: rgba(0, 0, 0, 0.87);
+    width: 100%;
+    border: 0;
+    display: flex;
+    position: relative;
+    font-size: .875rem;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #FFF;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    margin-top: 30px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.makeStyles-primaryCardHeader-374:not(.makeStyles-cardHeaderIcon-369) {
+    background: linear-gradient(60deg, #ab47bc, #8e24aa);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.14), 0 7px 10px -5px rgba(156, 39, 176,.4);
+}
+
+.makeStyles-cardHeader-366.makeStyles-warningCardHeader-370:not(.makeStyles-cardHeaderIcon-369),
+.makeStyles-cardHeader-366.makeStyles-successCardHeader-371:not(.makeStyles-cardHeaderIcon-369),
+.makeStyles-cardHeader-366.makeStyles-dangerCardHeader-372:not(.makeStyles-cardHeaderIcon-369),
+.makeStyles-cardHeader-366.makeStyles-infoCardHeader-373:not(.makeStyles-cardHeaderIcon-369),
+.makeStyles-cardHeader-366.makeStyles-primaryCardHeader-374:not(.makeStyles-cardHeaderIcon-369),
+.makeStyles-cardHeader-366.makeStyles-roseCardHeader-375:not(.makeStyles-cardHeaderIcon-369) {
+    padding: 15px;
+    margin-top: -20px;
+    border-radius: 3px;
+}
+
+.makeStyles-cardHeader-366.makeStyles-primaryCardHeader-374{
+    color: #FFF;
+    margin: 0 15px;
+    padding: 0;
+    position: relative;
+}
+
+.makeStyles-cardTitleWhite-3214 {
+    color: #FFFFFF;
+    margin-top: 0px;
+    min-height: auto;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300;
+    margin-bottom: 3px;
+    text-decoration: none;
+}
+
+.makeStyles-cardCategoryWhite-3213, .makeStyles-cardCategoryWhite-3213 a, .makeStyles-cardCategoryWhite-3213 a:hover, .makeStyles-cardCategoryWhite-3213 a:focus {
+    color: rgba(255,255,255,.62);
+    margin: 0;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.makeStyles-cardBody-399 {
+    flex: 1 1 auto;
+    padding: 0.9375rem 20px;
+    position: relative;
+    -webkit-box-flex: 1;
+}
+
+.makeStyles-tableResponsive-3225 {
+    width: 100%;
+    margin-top: 24px;
+    overflow-x: auto;
+}
+
+.makeStyles-table-3222 {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+.makeStyles-primaryTableHeader-3216 {
+    color: #9c27b0;
+}
+
+.makeStyles-tableHeadRow-3226 {
+    color: inherit;
+    height: 56px;
+    display: table-row;
+    outline: none;
+    vertical-align: middle;
+}
+
+.MuiTableCell-head {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.3125rem;
+}
+
+.MuiTableBody-root {
+    display: table-row-group;
+}
+
+.makeStyles-tableHeadCell-3223 {
+    color: inherit;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+.makeStyles-tableCell-3224 {
+    padding: 12px 8px;
+    font-size: 0.8125rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.42857143;
+    vertical-align: middle;
+}
+
+.makeStyles-tableHeadCell-3223, .makeStyles-tableHeadCell-3223.makeStyles-tableCell-3224 {
+    font-size: 1em;
+}
+
+
+.makeStyles-tableBodyRow-3227 {
+    color: inherit;
+    height: 48px;
+    display: table-row;
+    outline: none;
+    vertical-align: middle;
+}
+
+.MuiTableCell-root {
+    display: table-cell;
+    padding: 14px 40px 14px 16px;
+    font-size: 0.875rem;
+    text-align: left;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.43;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    letter-spacing: 0.01071em;
+    vertical-align: inherit;
+}
+
+.MuiTableCell-body {
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 400;
+}
+
+.makeStyles-tableCell-3224 {
+    padding: 12px 8px;
+    font-size: 0.8125rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.42857143;
+    vertical-align: middle;
+}

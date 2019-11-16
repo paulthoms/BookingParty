@@ -29,7 +29,7 @@ function SideBar(props) {
                 <ul className="MuiList-root makeStyles-list-14 MuiList-padding">
                     {
                         NavigationConfig.map((item,index)=>{
-                            if (item.display !== 'none'){
+                            if (item.layout === 'sidebar'){
                                 return (
                                     <div key = {index} onClick = {()=>handleOnClickItem(item.title)}  className={`makeStyles-item-15 ${item.title === titleContent &&"makeStyles-orange-25"} `} ><Item title = {item.title}/></div>
                                 );

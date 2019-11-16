@@ -1,14 +1,17 @@
 import React from "react";
 import { useImmer } from "use-immer";
-import HomePage from '../home/HomePage';
-import BookingPage from '../booking/BookingPage';
-import AboutRestaurant from '../about-restaurant/AboutRestaurant';
-import AdminLogin from '../component/Login/Login';
+import HomePage from '../Normal/home/HomePage';
+import BookingPage from '../Normal/booking/BookingPage';
+import AboutRestaurant from '../Normal/about-restaurant/AboutRestaurant';
+import AdminLogin from '../Normal/component/Login/Login';
+
+import AdminRestaurant from '../AdminRestaurant/AdminRestaurant';
+import Admin from '../Admin/Admin';
+import Normal from '../Normal/NormalPage';
 
 
 const defaultState = {
     NavigationConfig: [
-
         {
             id: "home_page",
             title: "Home",
@@ -48,11 +51,52 @@ const defaultState = {
             url: "/home",
             component: HomePage,
             layout: "login"
-        }
+        },
+        {
+            id: "admin",
+            url: "/admin",
+            component: Admin,
+            layout: "admin"
+        },
+        {
+            id: "adminrestaurant",
+            url: "/adminres",
+            component: AdminRestaurant,
+            layout: "admin"
+        },
 
     ],
+    NavBar: [
+        {
+            id: "home_page",
+            title: "Home",
+            url: "/home",
+        },
+        {
+            id: "booking",
+            title: "Booking",
+            url: "/booking",
+        },
+        {
+            id: "login",
+            title: "Login",
+            url: "/login",
+        },
+        {
+            id: "logout",
+            title: "Logout",
+            url: "/home",
+        },
+        {
+            id: "profile",
+            title: "profile",
+            url: "/profile",
+        }
+    ]
+    ,
     isLogin: false,
-    allRestaurant: []
+    allRestaurant: [],
+    userRole: localStorage.getItem("user-role")
 };
 
 const AppContext = React.createContext();

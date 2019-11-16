@@ -1,38 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import FileUpload from './component/FileUpload';
-import NarBar from './shared/NavBar';
 import { Route, Switch } from 'react-router-dom';
 import Navigation from './routes';
 import { BrowserRouter as Router } from 'react-router-dom';
-
-
 import { useAppContext } from "./contextApp/useContextApp";
+import NormalPage from "./Normal/NormalPage";
+import Admin from "./Admin/Admin";
+import AdminLogin from "./Normal/component/Login/Login";
+import NarBar from './Normal/shared/NavBar';
 
 function App() {
 
   const {
-    NavigationConfig
+    NavigationConfig,
+    userRole
   } = useAppContext();
 
-  console.log(NavigationConfig);
+  const [url, setUrl] = useState();
+
+  useEffect(() => {
+    setUrl(window.location.href);
+  }, [])
+
+
+
 
   return (
     <div>
       <Router>
-        {/* <h4>React Upload File</h4>
-      <FileUpload /> */}
-        <NarBar />
+        {window.location.href.toString().split('/')[3].includes("admin") == false && <NarBar />}
         <Switch>
           {
             NavigationConfig.map((item, index) => {
-              return <Route exact path={item.url} component={item.component} />
+              return <Route path={item.url} component={item.component} />
             })
           }
         </Switch>
-
-        {/* <FileUpload /> */}
-
       </Router>
 
     </div>

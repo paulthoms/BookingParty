@@ -1,7 +1,7 @@
-import HomePage from './home/HomePage';
-import BookingPage from './booking/BookingPage';
-import AboutRestaurant from './about-restaurant/AboutRestaurant';
-import AdminLogin from './component/Login/Login'
+import HomePage from './Normal/home/HomePage';
+import BookingPage from './Normal/booking/BookingPage';
+import AboutRestaurant from './Normal/about-restaurant/AboutRestaurant';
+import AdminLogin from './Normal/component/Login/Login'
 
 
 const NavigationConfig = [

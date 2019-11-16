@@ -1,11 +1,7 @@
 import { useContext, useEffect } from "react";
-import HomePage from '../home/HomePage';
-import BookingPage from '../booking/BookingPage';
-import AboutRestaurant from '../about-restaurant/AboutRestaurant';
-import AdminLogin from '../component/Login/Login';
 
 import { AppContext } from "./context";
-import { getAPIWithoutUser } from '../shared/APICaller';
+import { getAPIWithoutUser } from '../Normal/shared/APICaller';
 
 const useAppContext = () => {
     const [state, dispatch] = useContext(AppContext);
@@ -14,13 +10,18 @@ const useAppContext = () => {
 
         //get allRestaurant
         getAPIWithoutUser("/pub/restaurant", function (res) {
-            console.log(res);
+            // console.log(res);
+            console.log(localStorage.getItem('user-role'));
             if (res.length) {
                 dispatch((draft) => {
                     draft.allRestaurant = res.data.data;
                 })
             }
-        })
+        });
+
+        dispatch((draft) => {
+            draft.userRole = localStorage.getItem("user-role");
+        });
 
     }, [])
 
@@ -40,10 +41,17 @@ const useAppContext = () => {
 
     }
 
+    function updateNavBar(NavBar) {
+        dispatch((draft) => {
+            draft.NavBar = NavBar;
+        })
+    }
+
     return {
         ...state,
         updateNavigationConfig,
-        updateIsLogin
+        updateIsLogin,
+        updateNavBar
     };
 };
 

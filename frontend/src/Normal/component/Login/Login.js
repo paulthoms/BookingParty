@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { login, getAPIWithoutUser } from '../../shared/APICaller';
-// import "./login.css";
 
 function Login() {
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const [focusPassword,setFocusPassword] = useState(false);
+    function handleOnFoucusFocusPassword(){
+        setFocusPassword(true);
+    }
+    function handleOnBlurFocusPassword(){
+        setFocusPassword(false);
+    }
 
-    useEffect(() => {
-
-    }, []);
-
-    const [userName, setUserName] = useState();
-    const [password, setPassword] = useState();
-
+    const [focusUsername,setFocusUsername] = useState(false);
+    function handleOnFoucusFocusUsername(){
+        setFocusUsername(true);
+    }
+    function handleOnBlurFocusUsername(){
+        setFocusUsername(false);
+    }
     function handleOnclickLogin() {
         var bodyFormData = new FormData();
         bodyFormData.set("Name", userName);
@@ -38,21 +46,28 @@ function Login() {
         setPassword(e.target.value);
     }
 
-
-
-
     return (
-        <div className="login-box">
-            <h1>Đăng nhập</h1>
-            <div className="textbox">
-                <i className="fas fa-user" />
-                <input onChange={handleChangeName} type="text" id="email" name="email" placeholder="Email hoặc Tên tài khoản" />
+        <div className="container-login">
+            <div className="login-box" style={{color: 'while'}}>
+                <h1>Đăng nhập</h1>
+                <div className="MuiGrid-root makeStyles-grid-356 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3">
+                    <div className="MuiFormControl-root undefined makeStyles-formControl-206 MuiFormControl-fullWidth">
+                        <label className={"MuiFormLabel-root MuiInputLabel-root makeStyles-labelRoot-201 MuiInputLabel-formControl MuiInputLabel-animated " + (focusUsername && 'MuiInputLabel-shrink ') + (userName != '' && " MuiInputLabel-shrink MuiInputLabel-filled")} data-shrink="false" htmlFor = 'username' >User Name</label>
+                        <div className={"MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-underline-198 MuiInputBase-formControl MuiInput-formControl " + (focusUsername && 'Mui-focused')}>
+                            <input aria-invalid="false" onChange = {handleChangeName} onFocus={handleOnFoucusFocusUsername} onBlur = {handleOnBlurFocusUsername} className="MuiInputBase-input MuiInput-input" id= 'username' value = {userName} type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div className="MuiGrid-root makeStyles-grid-356 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3">
+                    <div className="MuiFormControl-root undefined makeStyles-formControl-206 MuiFormControl-fullWidth">
+                        <label className={"MuiFormLabel-root MuiInputLabel-root makeStyles-labelRoot-201 MuiInputLabel-formControl MuiInputLabel-animated " + (focusPassword && 'MuiInputLabel-shrink ') + (password != '' && " MuiInputLabel-shrink MuiInputLabel-filled")} data-shrink="false" htmlFor = "password" >Password</label>
+                        <div className={"MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-underline-198 MuiInputBase-formControl MuiInput-formControl " + (focusPassword && 'Mui-focused')}>
+                            <input aria-invalid="false" onChange = {handleChangePassword} onFocus={handleOnFoucusFocusPassword} onBlur = {handleOnBlurFocusPassword} className="MuiInputBase-input MuiInput-input" id= 'password' value = {password} type="text" />
+                        </div>
+                    </div>
+                </div>
+                <button onClick={handleOnclickLogin} className="btn">Đăng nhập</button>
             </div>
-            <div className="textbox">
-                <i className="fas fa-lock" />
-                <input onChange={handleChangePassword} type="password" id="password" name="password" placeholder="Mật khẩu" />
-            </div>
-            <button onClick={handleOnclickLogin} className="btn">Đăng nhập</button>
         </div>
     );
 }

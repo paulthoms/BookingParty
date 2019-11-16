@@ -1,12 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {useAdminResContext} from '../../../../AdminRestaurant/context/useAdminResContext';
-
+import DishAction from './DishAction';
 
 function Row (props){
-    const {
-        updateTitleContent,
-    } = useAdminResContext();
-
     const [cols,setCols] = useState([]);
     useEffect(()=>{
         var tmp =[];
@@ -33,16 +28,7 @@ function Row (props){
                 );
             case 'edit':
                 return (
-                    <div>
-                        <button className="MuiButtonBase-root MuiButton-root makeStyles-button-148 makeStyles-primary-151 MuiButton-text"
-                        tabIndex={0} onClick = {() => updateTitleContent('Edit Dish')} type="button">
-                            <span className="MuiButton-label">Edit</span>
-                        </button>
-                        <button className="MuiButtonBase-root MuiButton-root makeStyles-button-148 makeStyles-primary-151 MuiButton-text"
-                        tabIndex={0} type="button">
-                            <span className="MuiButton-label">Delete</span>
-                        </button>
-                    </div>
+                    <DishAction />
                 );
             default:
                 return (

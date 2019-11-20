@@ -5,6 +5,7 @@ import RestaurantOwnerPage from "../RestaurantOwner/RestaurantOwnerPage";
 import CreateRestaurantOwnerPage from "../Create/OwnerRestaurant/CreateRestaurantOwnerPage";
 import CreateRestaurantPage from "../Create/Restaurant/CreateRestaurant";
 import EditProfilePage from "../EditProfile/EditProfilePage";
+import RestaurantPage from "../Restaurant/RestaurantPage";
 
 
 const defaultState = {
@@ -13,6 +14,11 @@ const defaultState = {
             id: "user",
             title: "User",
             component: UserPage
+        },
+        {
+            id: "restaurant",
+            title: "Restaurant",
+            component: RestaurantPage
         },
         {
             id: "rso",
@@ -37,6 +43,11 @@ const defaultState = {
         }
     ],
     isLogin: false,
+    userProfile:{
+        name: 'admin',
+        image: "123123",
+        password: "32324"
+    },
     titleContent: "User",
     userRole: localStorage.getItem("user-role")
 };

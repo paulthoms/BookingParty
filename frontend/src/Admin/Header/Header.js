@@ -43,7 +43,7 @@ function Header(props){
                             </span>
                             <span className="MuiTouchRipple-root" />
                         </button>
-                        <div role="tooltip" className={"makeStyles-popperNav-187 " + (!isVisibale ? 'hidden' : '' )} style={{position: 'absolute', transform: 'translate3d(1555px, 48px, 0px)', top: '0px', left: '0px', willChange: 'transform' }} x-placement="bottom">
+                        <div role="tooltip" className={"makeStyles-popperNav-187 " + (!isVisibale ? 'hidden' : '' )} style={{position: 'absolute', top: '50px', right: '10px', willChange: 'transform' }} x-placement="bottom">
                             <div className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded" id="profile-menu-list-grow" style={{opacity: 1, transform: 'none', transformOrigin: 'center top', transition: 'opacity 254ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 169ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'}}>
                                 <ul className="MuiList-root MuiList-padding" role="menu" tabIndex={-1}>
                                     <li className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root makeStyles-dropdownItem-189 MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" tabIndex={-1} onClick ={() => handleOnClickProfile('Edit Profile')} role="menuitem" aria-disabled="false">Profile<span className="MuiTouchRipple-root" /></li>

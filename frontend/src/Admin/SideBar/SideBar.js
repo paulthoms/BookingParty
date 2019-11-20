@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Item from './Item';
 import {useAdminContext} from '../context/useAdminContext';
 
@@ -15,17 +15,23 @@ function SideBar(props) {
         updateTitleContent(title);
     }
 
+    const [show, setShow] = useState(false)
+
+    function onHandleClickShow(){
+        setShow(!show);
+    }
+
     return (
         <div id="sidebar">
-            <div className="makeStyles-logo-8">
-                <a href="/" className="makeStyles-logoLink-9">
+            <div className="makeStyles-logo-8" onClick= {onHandleClickShow} >
+                <a href="#" className="makeStyles-logoLink-9" >
                     <div className="makeStyles-logoImage-11">
                         <img src={process.env.PUBLIC_URL + "/download.png"}alt="logo" className="makeStyles-img-12"/>
                     </div>
                     Booking Party
                 </a>
             </div>
-            <div className="makeStyles-sidebarWrapper-27">
+            <div className={"makeStyles-sidebarWrapper-27 "+ (show && "show")} style ={{}}>
                 <ul className="MuiList-root makeStyles-list-14 MuiList-padding">
                     {
                         NavigationConfig.map((item,index)=>{

@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
 import TableDish from '../Card/Table/TableDish';
-import variables from '../context/variables';
 
 function DishesPage() {
     return (

@@ -15,7 +15,7 @@ function TableDish(props) {
                         <Row cols = {["Minerva Hooper",	"Curaçao",	"Sinaai-Waas",	"$23,789"]} type = "edit"/>
                         <Row cols = {["Sage Rodriguez",	"Netherlands",	"Baileux",	"$56,142"]} type = "edit"/>
                         <Row cols = {["Philip Chaney",	"Korea, South",	"Overland Park",	"$38,735"]} type = "edit"/>
-                        <Row cols = {["Doris Greene",	"Malawi",	"Feldkirchen in Kärnten",	"$63,542"]} type = "edit"/>
+                        <Row cols = {["Doris Greene",	"Malawi",	"Feldkirchen in Kärnten",	"$63,542"]} type = "edit"/> 
                         <Row cols = {["Mason Porter",	"Chile",	"Gloucester",	"$78,615"]} type = "edit"/>
                     </tbody>
                 </table>

@@ -340,7 +340,10 @@ html,body{
     z-index: 4;
     overflow: auto;
     position: relative;
-    overflow-scrolling: touch;
+    transition: height 0.5s ease;
+    -moz-transition: height 0.5s ease;
+    -webkit-transition: height 0.5s ease;
+    -o-transition: height 0.5s ease;
 }
 
 .MuiList-root {
@@ -418,6 +421,23 @@ html,body{
 .makeStyles-orange-25>.MuiListItem-button {
     box-shadow: 0 12px 20px -10px rgba(255, 152, 0,.28), 0 4px 20px 0 rgba(0, 0, 0,.12), 0 7px 8px -5px rgba(255, 152, 0,.2);
     background-color: #ff9800;
+}
+
+@media (max-width: 960px){
+    #sidebar{
+        position: relative;
+        width: 100%;
+    }
+    a.makeStyles-logoLink-9{
+        text-align: center;
+    }
+    .makeStyles-sidebarWrapper-27 {
+        width: 100%;
+        height: 100%;
+    }
+    .makeStyles-sidebarWrapper-27:not(.show) {
+        height: 0;
+    }
 }
 
 /* Admin */
